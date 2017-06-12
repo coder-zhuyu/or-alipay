@@ -1,0 +1,5 @@
+logs/*.log
+logs/nginx.pid
+*_temp/
+conf/nginx-dev.conf
+conf/nginx.conf
