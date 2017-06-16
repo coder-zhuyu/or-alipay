@@ -27,14 +27,14 @@ function _M.gen_orderno()
 
     -- 用共享内存生成sequence
     local auto_incr = ngx.shared.auto_incr
-    local num, err = auto_incr:incr('sapi.sequence', 1, 60000)
+    local num, err = auto_incr:incr('order.sequence', 1, 60000)
     if not num then
         return nil, err
     end
 
     num = tonumber(num)
     if num < 60000 or num >= 90000 then
-        local ok, err = auto_incr:set('ccbrecharge.sequence', 60001)
+        local ok, err = auto_incr:set('order.sequence', 60001)
         if not ok then
             return nil, err
         end

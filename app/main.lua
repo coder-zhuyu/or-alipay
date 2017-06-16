@@ -22,8 +22,7 @@ function _M.run()
             req.get_method(),
             var.uri,
             req.get_uri_args(),
-            req.get_post_args(),
-            {__body=req.get_body_data()})
+            req.get_post_args())
     end)
 
     if status then

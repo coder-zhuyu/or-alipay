@@ -18,7 +18,7 @@ local common_config = {
         ip = "127.0.0.1",
         port = 6379,
         keepalive_size = 100,
-        keepalive_timeout = 60000,        -- 30s
+        keepalive_timeout = 60000,        -- 60s
         passwd = '111111'
     },
 
@@ -28,6 +28,13 @@ local common_config = {
     mail_passwd = os.getenv('mail_passwd'),
     mail_to = {"zhuyu@think-land.com", "617631456@qq.com"},
     mail_cc = {},
+
+    return_url = os.getenv('return_url'),
+    notify_url = os.getenv('notify_url'),
+
+    ali_appid = os.getenv('ali_appid'),
+    private_key = os.getenv('private_key'),
+    alipay_public_key = os.getenv('alipay_public_key'),
 }
 
 local config = {

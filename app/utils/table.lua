@@ -36,7 +36,9 @@ end
 function _M.table2str_urlencode(tab)
     local res_tab = {}
     for k, v in pairs(tab) do
-        table.insert(res_tab, string.format('%s=%s', k, ngx.escape_uri(v)))
+        if v ~= "" then
+            table.insert(res_tab, string.format('%s=%s', k, ngx.escape_uri(v)))
+        end
     end
     return table.concat(res_tab, "&")
 end
@@ -56,7 +58,7 @@ function _M.table2str_order(tab)
     table.sort(key_tab)
     for _, key in pairs(key_tab) do
         -- 为空值不参与签名
-        if tab[key] and tab[key] ~= "" then
+        if tab[key] ~= "" then
             table.insert(res_tab, string.format('%s=%s', key, tab[key]))
         end
     end
