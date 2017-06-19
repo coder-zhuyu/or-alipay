@@ -188,6 +188,7 @@ function _M.query(self, params)
         resp.msg = response.get_errmsg(resp.code)
     elseif alipay_response:is_success() then
         log.info("查询成功:", out_trade_no or trade_no)
+        resp.data = alipay_response:get_body()
     else
         log.err("查询失败:", out_trade_no or trade_no)
         resp.code = '300002'

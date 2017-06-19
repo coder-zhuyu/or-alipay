@@ -20,7 +20,7 @@ function _M.router(self)
 end
 
 function _M.index(self, params)
-    return "welcome to or-sapi!"
+    return "welcome to or-alipay demo!"
 end
 
 return _M
